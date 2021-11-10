@@ -81,6 +81,19 @@ import UIKit
             segmentedScrollView.segmentViewHeight = segmentViewHeight
         }
     }
+	
+	/**
+	 *  Set width offset for segment view.
+	 *
+	 *  By default the height is 10.0
+	 *
+	 *  segmentedViewController.segmentViewOffsetWidth = 40.0
+	 */
+	open var segmentViewOffsetWidth: CGFloat = 10.0 {
+		didSet {
+			segmentedScrollView.segmentViewOffsetWidth = segmentViewOffsetWidth
+		}
+	}
     
     /**
      *  Set headerview offset height.
@@ -371,6 +384,7 @@ import UIKit
         segmentedScrollView.headerViewHeight            = headerViewHeight
         segmentedScrollView.headerViewOffsetHeight      = headerViewOffsetHeight
         segmentedScrollView.segmentViewHeight           = segmentViewHeight
+		segmentedScrollView.segmentViewOffsetWidth      = segmentViewOffsetWidth
         segmentedScrollView.backgroundColor             = segmentedScrollViewColor
         segmentedScrollView.sjDisableScrollOnContentView = disableScrollOnContentView
     }

@@ -65,11 +65,11 @@ class SJSegmentView: UIScrollView {
             }
         }
     }
+	var segmentViewOffsetWidth: CGFloat = 10.0
     
     var font: UIFont?
     var selectedSegmentViewHeight: CGFloat?
     let kSegmentViewTagOffset = 100
-    var segmentViewOffsetWidth: CGFloat = 10.0
     var segments = [SJSegmentTab]()
     var segmentContentView: UIView?
     var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?

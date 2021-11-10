@@ -36,14 +36,17 @@ class ViewController: SJSegmentedViewController {
 
 			let fourthViewController = storyboard
 				.instantiateViewController(withIdentifier: "CollectionViewIdentifier")
-			fourthViewController.title = "Fourth"
+			fourthViewController.title = "Fourth Fourth Fourth"
 
+			
+			
 			headerViewController = headerController
 			segmentControllers = [firstViewController,
 			                           secondViewController,
 			                           thirdViewController!,
 			                           fourthViewController]
 			headerViewHeight = 200
+			segmentViewOffsetWidth = 40
 			selectedSegmentViewHeight = 5.0
 			headerViewOffsetHeight = 31.0
 			segmentTitleColor = .gray

@@ -79,6 +79,12 @@ class SJSegmentedScrollView: UIScrollView {
             segmentView?.font = segmentTitleFont
         }
     }
+	
+	var segmentViewOffsetWidth: CGFloat = 10 {
+		didSet {
+			segmentView?.segmentViewOffsetWidth = segmentViewOffsetWidth
+		}
+	}
     
     var topSpacing: CGFloat?
     
@@ -261,6 +267,7 @@ class SJSegmentedScrollView: UIScrollView {
             
             segmentView = SJSegmentView(frame: CGRect.zero)
 			segmentView?.controllers					= controllers
+			segmentView?.segmentViewOffsetWidth			= segmentViewOffsetWidth
             segmentView?.selectedSegmentViewColor		= selectedSegmentViewColor
             segmentView?.selectedSegmentViewHeight		= selectedSegmentViewHeight!
             segmentView?.titleColor						= segmentTitleColor
