@@ -228,6 +228,15 @@ class SJSegmentedScrollView: UIScrollView {
                          context: nil)
     }
     
+    func removeObserverFor(_ view: UIView) {
+        if let index = viewObservers.firstIndex(of: view) {
+            viewObservers.remove(at: index)
+        }
+        view.removeObserver(self,
+                            forKeyPath: "contentOffset",
+                            context: nil)
+    }
+    
     func addContentView(_ contentView: UIView, frame: CGRect) {
         
         if self.contentView == nil {
@@ -240,6 +249,13 @@ class SJSegmentedScrollView: UIScrollView {
             (segment, index, animated) in
             self.didSelectSegmentAtIndex?(self.segmentView!.segments[index], index, animated)
         }
+    }
+    
+    func removeContentView(_ contentView: UIView) {
+        if let index = contentViews.firstIndex(of: contentView) {
+            contentViews.remove(at: index)
+        }
+        self.contentView?.removeContentView(contentView)
     }
     
     func updateSubviewsFrame(_ frame: CGRect) {
@@ -260,6 +276,14 @@ class SJSegmentedScrollView: UIScrollView {
     }
     
     private var segmentViewHeightConstraint: NSLayoutConstraint?
+    
+    func removeSegmentView() {
+        guard let segmentView = segmentView else {
+            return
+        }
+        segmentView.removeFromSuperview()
+        segmentViewHeightConstraint = nil
+    }
     
     func addSegmentView(_ controllers: [UIViewController], frame: CGRect) {
         

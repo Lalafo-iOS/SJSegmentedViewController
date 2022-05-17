@@ -107,6 +107,17 @@ class SJContentView: UIScrollView {
         contentViewWidthConstraint.constant = CGFloat(contentViews.count) * bounds.width
     }
     
+    func removeContentView(_ view: UIView) {
+        view.removeFromSuperview()
+        if let index = contentViews.firstIndex(of: view) {
+            contentViews.remove(at: index)
+        }
+        
+        if let index = contentSubViewWidthConstraints.firstIndex(where: { ($0.firstItem as? UIView) == view }) {
+            contentSubViewWidthConstraints.remove(at: index)
+        }
+    }
+    
     func updateContentControllersFrame(_ frame: CGRect) {
         
         let width = frame.size.width

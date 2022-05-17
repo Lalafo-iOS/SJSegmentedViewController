@@ -14,6 +14,8 @@ class ViewController: SJSegmentedViewController {
 	var selectedSegment: SJSegmentTab?
 
 	override func viewDidLoad() {
+        super.viewDidLoad()
+        
 		if let storyboard = self.storyboard {
 
 			let headerController = storyboard
@@ -59,7 +61,6 @@ class ViewController: SJSegmentedViewController {
 		}
 
 		title = "Segment"
-		super.viewDidLoad()
 	}
 
 	func getSegmentTabWithImage(_ imageName: String) -> UIView {
