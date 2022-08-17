@@ -22,98 +22,98 @@
 
 import UIKit
 
-class SJSegmentedScrollView: UIScrollView {
+public class SJSegmentedScrollView: UIScrollView {
     
-    var segmentView: SJSegmentView?
+    public var segmentView: SJSegmentView?
     
-    var headerViewHeight: CGFloat! = 0 {
+    public var headerViewHeight: CGFloat! = 0 {
         didSet {
             headerHeightConstraint?.constant = headerViewHeight
         }
     }
     
-    var segmentViewHeight: CGFloat! = 0 {
+    public var segmentViewHeight: CGFloat! = 0 {
         didSet {
             segmentViewHeightConstraint?.constant = segmentViewHeight
         }
     }
     
-    var headerViewOffsetHeight: CGFloat! = 0
+    public var headerViewOffsetHeight: CGFloat! = 0
     
-    var selectedSegmentViewColor: UIColor! = UIColor.red {
+    public var selectedSegmentViewColor: UIColor! = UIColor.red {
         didSet {
             segmentView?.selectedSegmentViewColor = selectedSegmentViewColor
         }
     }
     
-    var selectedSegmentViewHeight: CGFloat! = 0
+    public var selectedSegmentViewHeight: CGFloat! = 0
     
-    var segmentBounces = false
+    public var segmentBounces = false
     
-    var segmentTitleColor: UIColor! = UIColor.red {
+    public var segmentTitleColor: UIColor! = UIColor.red {
         didSet {
             segmentView?.titleColor = segmentTitleColor
         }
     }
     
-    var segmentSelectedTitleColor: UIColor? {
+    public var segmentSelectedTitleColor: UIColor? {
         didSet {
             segmentView?.selectedTitleColor = segmentSelectedTitleColor
         }
     }
     
-    var segmentBackgroundColor: UIColor? {
+    public var segmentBackgroundColor: UIColor? {
         didSet {
             segmentView?.segmentBackgroundColor = segmentBackgroundColor
         }
     }
     
-    var segmentShadow: SJShadow? {
+    public var segmentShadow: SJShadow? {
         didSet {
             segmentView?.shadow = segmentShadow
         }
     }
     
-    var segmentTitleFont: UIFont! = UIFont.systemFont(ofSize: 12) {
+    public var segmentTitleFont: UIFont! = UIFont.systemFont(ofSize: 12) {
         didSet {
             segmentView?.font = segmentTitleFont
         }
     }
 	
-	var segmentViewOffsetWidth: CGFloat = 10 {
+	public var segmentViewOffsetWidth: CGFloat = 10 {
 		didSet {
 			segmentView?.segmentViewOffsetWidth = segmentViewOffsetWidth
 		}
 	}
     
-    var topSpacing: CGFloat?
+    public var topSpacing: CGFloat?
     
-    var bottomSpacing: CGFloat?
+    public var bottomSpacing: CGFloat?
     
-    var observing = true
+    public var observing = true
     
-    var headerView: UIView?
+    public var headerView: UIView?
     
-    var contentControllers: [UIViewController]?
+    public var contentControllers: [UIViewController]?
     
-    var contentViews = [UIView]()
+    public var contentViews = [UIView]()
     
-    var contentView: SJContentView?
+    public var contentView: SJContentView?
     
-    var scrollContentView: UIView!
+    public var scrollContentView: UIView!
     
-    var contentViewHeightConstraint: NSLayoutConstraint!
+    public var contentViewHeightConstraint: NSLayoutConstraint!
     
-    var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
+    public var didSelectSegmentAtIndex: DidSelectSegmentAtIndex?
     
-	var sjShowsVerticalScrollIndicator: Bool = false {
+	public var sjShowsVerticalScrollIndicator: Bool = false {
 		didSet {
 			showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
 			contentView?.showsVerticalScrollIndicator = sjShowsVerticalScrollIndicator
 		}
 	}
     
-	var sjShowsHorizontalScrollIndicator: Bool = false  {
+	public var sjShowsHorizontalScrollIndicator: Bool = false  {
 		didSet {
 			showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
 			contentView?.showsHorizontalScrollIndicator = sjShowsHorizontalScrollIndicator
@@ -121,7 +121,7 @@ class SJSegmentedScrollView: UIScrollView {
 	}
     
     private var viewObservers = [UIView]()
-    var sjDisableScrollOnContentView: Bool = false {
+    public var sjDisableScrollOnContentView: Bool = false {
         didSet {
             contentView?.isScrollEnabled = !sjDisableScrollOnContentView
         }
@@ -408,7 +408,7 @@ class SJSegmentedScrollView: UIScrollView {
         }
     }
 
-	override func observeValue(forKeyPath keyPath: String?,
+    public override func observeValue(forKeyPath keyPath: String?,
 	                           of object: Any?,
 	                           change: [NSKeyValueChangeKey : Any]?,
 	                           context: UnsafeMutableRawPointer?) {

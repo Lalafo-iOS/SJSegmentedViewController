@@ -28,7 +28,6 @@ class ExamplePresentViewController: UIViewController {
 
 			let segmentController = SJSegmentedViewController(headerViewController: headerViewController, segmentControllers: [])
             _ = segmentController.view
-			segmentController.headerViewController = headerViewController
 			segmentController.segmentControllers = [firstViewController,
 			                                        secondViewController]
 			segmentController.headerViewHeight = 200.0
@@ -36,8 +35,8 @@ class ExamplePresentViewController: UIViewController {
             segmentController.segmentTitleColor = .lightGray
             segmentController.segmentSelectedTitleColor = .black
             
-            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-                segmentController.segmentControllers = [secondViewController, UIViewController()]
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                segmentController.setSelectedSegmentAt(1, animated: false)
             }
             
             present(segmentController, animated: true, completion: nil)

@@ -299,7 +299,7 @@ import UIKit
     }
     
     open weak var delegate:SJSegmentedViewControllerDelegate?
-    var segmentedScrollView = SJSegmentedScrollView(frame: CGRect.zero)
+    public var segmentedScrollView = SJSegmentedScrollView(frame: CGRect.zero)
     var segmentScrollViewTopConstraint: NSLayoutConstraint?
     
     

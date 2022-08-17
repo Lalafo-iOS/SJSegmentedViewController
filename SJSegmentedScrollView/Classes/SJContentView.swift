@@ -22,7 +22,7 @@
 
 import UIKit
 
-class SJContentView: UIScrollView {
+public class SJContentView: UIScrollView {
     
     var pageIndex = 0
     var contentViews = [UIView]()

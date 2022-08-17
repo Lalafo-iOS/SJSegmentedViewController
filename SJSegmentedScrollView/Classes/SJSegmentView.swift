@@ -22,7 +22,7 @@
 
 import UIKit
 
-class SJSegmentView: UIScrollView {
+public class SJSegmentView: UIScrollView {
     
     var selectedSegmentViewColor: UIColor? {
         didSet {
@@ -315,7 +315,7 @@ class SJSegmentView: UIScrollView {
 		return maxWidth
 	}
     
-	override func observeValue(forKeyPath keyPath: String?,
+    public override func observeValue(forKeyPath keyPath: String?,
 	                           of object: Any?,
 	                           change: [NSKeyValueChangeKey : Any]?,
 	                           context: UnsafeMutableRawPointer?) {
