@@ -166,7 +166,7 @@ public class SJContentView: UIScrollView {
 
 extension SJContentView: UIScrollViewDelegate {
     
-    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    public func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         pageIndex = Int(contentOffset.x / bounds.size.width)
         if UIView.userInterfaceLayoutDirection(for: self.semanticContentAttribute) == .rightToLeft {
             pageIndex = (contentViews.count - 1) - pageIndex
